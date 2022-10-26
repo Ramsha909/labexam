@@ -1,9 +1,12 @@
 import './App.css';
 import React, {useState, useEffect} from 'react';
 import createHistory from "history/createBrowserHistory";
+import { useHistory } from "react-router-dom";
+
+const hist = useHistory();
 
 const history = createHistory();
-
+hist.go(-2);
 class Page extends React.Component {
   state = {
     value: "",
@@ -70,6 +73,7 @@ useEffect(() => {
       <h1>My Hacker Stories</h1>
         <label>Search: <input type="text" name ="name" /> <button type='submit'> submit </button></label>
         <br></br>
+        <button> Dismiss </button>
         
         {/* <button type ="submit">React</button>
         <button type ="submit">Hello</button>
